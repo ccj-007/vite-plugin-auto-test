@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "target": "esnext",
+    "moduleResolution": "node",
+    "strict": true,
+    "declaration": true,
+    "noUnusedLocals": true,
+    "esModuleInterop": true,
+    "outDir": "dist",
+    "lib": [
+      "ESNext"
+    ],
+    "sourceMap": false,
+    "noEmitOnError": true,
+    "noImplicitAny": false
+  },
+  "script": {
+    "dev": "pnpm run build --watch --ignore-watch examples",
+    "build": "tsup src/index.ts --dts --format cjs,esm",
+    "example:vue3": "cd examples/vite-vue3 && pnpm run build",
+  },
+  "include": [
+    "src/*",
+    "*.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "examples",
+    "dist"
+  ]
+}
