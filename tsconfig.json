@@ -22,7 +22,9 @@
   },
   "include": [
     "src/*",
-    "*.d.ts"
+    "*.d.ts",
+    "src/examples/hooks.ts",
+    "src/examples/hooks.ts"
   ],
   "exclude": [
     "node_modules",
