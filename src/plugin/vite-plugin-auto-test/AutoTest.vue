@@ -9,7 +9,7 @@ const router = useRouter()
 
 let auto = Auto.getInstance()
 const isAuto = ref(false)
-const forceClose = ref(false)  //是否强制关闭自动测试
+// const forceClose = ref(false)  //是否强制关闭自动测试
 const isExpand = ref(false)  //展开配置项
 const isLoop = ref(false)  //是否多样本测试
 const pos = ref({
@@ -94,7 +94,7 @@ useRouteChange((val) => {
 
 <template>
   <div ref="autoRef" :style="{ left: pos.left + 'px', top: pos.top + 'px' }" class="fixed  z-50  text-[14px] text-white  text-center bg-green-500 common-shadow w-[100px]  flex-column-center
-  rounded-[4px]" v-if="!forceClose" @touchmove.stop="touchMove">
+  rounded-[4px]" @touchmove.stop="touchMove">
     <div @click="startAutoClick" class="leading-[24px]">{{ isAuto ? "PAUSE" : "AUTO" }}</div>
     <div v-if="isExpand">
       <div @click="handleSpeed(1000)">1.x</div>
@@ -111,7 +111,7 @@ useRouteChange((val) => {
   </div>
 </template>
 
-<style  scoped>
+<style scoped>
 .auto-qid-input {
   width: 100px;
   background: transparent;

@@ -1,6 +1,4 @@
 <script setup lang="ts">
-
-import HelloWorld from './components/HelloWorld.vue'
 //@ts-ignore
 // import { msg } from "virtual:my-module";
 // console.log(msg);
@@ -9,12 +7,7 @@ import HelloWorld from './components/HelloWorld.vue'
 
 <template>
   <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vuevite.svg" class="logo vue" alt="Vue logo" />
-    </a>
+    Hello Vite-vue3 !!!
   </div>
   <HelloWorld msg="Vite + Vue" />
 </template>

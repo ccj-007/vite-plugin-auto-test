@@ -1,8 +1,10 @@
 //@ts-ignore
 import AutoTest from "./AutoTest.vue";
 
-AutoTest.install = (Vue) => {
-  Vue.component('AutoTest', AutoTest)
-}
+// const Auto = {}
+// //@ts-ignore
+// Auto.install = (Vue) => {
+//   Vue.component('AutoTest', AutoTest)
+// }
 
 export default AutoTest

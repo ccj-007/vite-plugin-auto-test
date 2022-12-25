@@ -7,8 +7,10 @@ const config = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'index.js',
-    library: 'vite-plugin-auto-test',
-    libraryTarget: "umd"
+    libraryTarget: "module",
+  },
+  experiments: {
+    outputModule: true,
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', 'vue']
@@ -20,6 +22,10 @@ const config = {
   module: {
     rules: [
       {
+        test: /\.vue$/,
+        loader: 'vue-loader',
+      },
+      {
         test: /\.ts?$/,
         use: [{
           loader: 'ts-loader',
@@ -29,12 +35,13 @@ const config = {
         }],
       },
       {
-        test: /\.vue$/,
-        loader: 'vue-loader',
-      },
-      {
         test: /\.js$/,
-        loader: 'babel-loader'
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ["@babel/preset-env"]
+          }
+        }
       },
       {
         test: /\.css$/,
@@ -42,7 +49,7 @@ const config = {
           'vue-style-loader',
           'css-loader'
         ]
-      }
+      },
     ]
   }
 }
